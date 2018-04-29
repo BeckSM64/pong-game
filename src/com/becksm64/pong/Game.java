@@ -94,7 +94,7 @@ public class Game extends JPanel implements ActionListener {
 	    
 	    if(!gameOver) {
 	    	
-	    	//Draw Courtt
+	    	//Draw Court
 		    g2d.setColor(Color.white);
 		    g2d.setStroke(new BasicStroke(10));
 		    Line2D verticalLine = new Line2D.Float(Main.WIDTH / 2, 0,
