@@ -36,7 +36,7 @@ public class Paddle extends GlobalPosition {
 	
 	public void draw(Graphics2D g2d){
 		
-	     //g2d.drawImage(getPlayerImage(), x, y, null);
+	     //g2d.drawImage(getPlayerImage(), x, y, null)
 	     g2d.setColor(Color.white);
 	     g2d.fillRect(x, y, 25, 150);
 	}

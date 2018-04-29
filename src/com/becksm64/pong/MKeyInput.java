@@ -8,7 +8,7 @@ public class MKeyInput extends KeyAdapter{
 	Menu m;
   
 	public MKeyInput(Menu m){
-		this.m = m;
+		this.m = m;//Set menu to passed menu
 	}
 
 	public void keyPressed(KeyEvent e){

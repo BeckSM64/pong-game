@@ -66,7 +66,7 @@ public class Menu {
 		int key = e.getKeyCode();
 	    if(key == KeyEvent.VK_ENTER && Game.gameOver) {
 	    	
-	    	Game.gameOver = false;//Start the game if enter is pressed on the play option
+	    	Game.gameOver = false;//Start the game if enter is pressed on the play optionj
 	    	
 	    } else if ((key == KeyEvent.VK_UP || key == KeyEvent.VK_DOWN) && Game.gameOver) {
 	    	
