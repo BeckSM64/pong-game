@@ -66,9 +66,9 @@ public class Paddle extends GlobalPosition {
 	    //Keyboard input
 		int key = e.getKeyCode();
 		      
-		if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP){
+		if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP && !Game.gameOver){
 			velY = -5;
-		} else if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN){
+		} else if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN && !Game.gameOver){
 			velY = 5;
 		}
 		
@@ -84,9 +84,9 @@ public class Paddle extends GlobalPosition {
 	    //Stops movement when keys are no longer being pressed
 	    int key = e.getKeyCode();
 	    
-	    if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP){
+	    if(key == KeyEvent.VK_W || key == KeyEvent.VK_UP && !Game.gameOver){
 	    	velY = 0;
-	    } else if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN){
+	    } else if(key == KeyEvent.VK_S || key == KeyEvent.VK_DOWN && !Game.gameOver){
 	    	velY = 0;
 	    }
 	}

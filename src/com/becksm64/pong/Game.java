@@ -17,6 +17,9 @@ import javax.swing.Timer;
 
 public class Game extends JPanel implements ActionListener {
 	
+	//Title menu
+	Menu titleMenu;
+	
 	//Player and computer
 	static Paddle player1;
 	static Enemy computerPlayer;
@@ -45,9 +48,15 @@ public class Game extends JPanel implements ActionListener {
 	//Score limit
 	int scoreLimit;
 	
+	//Keep track of whether the play option has been selected on the title menu
+	boolean gameGoing;
+	
 	public Game() {
 		
 		setFocusable(true);//Set focus to the game panel on load
+		
+		titleMenu = new Menu();//Create the title menu
+		addKeyListener(new MKeyInput(titleMenu));
 		
 		player1 = new Paddle(50, 50);//Create new player at specified x and y position
 		addKeyListener(new KeyInput(player1));//Enable player controls
@@ -64,10 +73,12 @@ public class Game extends JPanel implements ActionListener {
 	    gameLoopTimer.setInitialDelay(1000);
 	    gameLoopTimer.start();
 	    
-	    gameOver = false;//Set game to start
+	    gameOver = true;//Set game to start
 	    winnerText = "";//Set winner text to blank by defualt
 	    
 	    scoreLimit = 2;
+	    
+	    gameGoing = false;
 	}
 	
 	/* DRAW TO SCREEN */
@@ -104,12 +115,16 @@ public class Game extends JPanel implements ActionListener {
 		    playerScore.draw(g2d);
 		    computerScore.draw(g2d);
 		    
+	    } else if(gameOver && playerScore.getScore() == 0 && computerScore.getScore() == 0) {
+	    	
+	    	titleMenu.draw(g2d);
 	    } else {
+	    	
 	    	Font font = new Font("TimesRoman", Font.PLAIN, 60);
 	    	g2d.setFont(font);
 	    	//g2d.drawString(winnerText, (Main.WIDTH / 2) - 400, 100);
 	    	
-	    	FontMetrics metrics = g.getFontMetrics(font);
+	    	FontMetrics metrics = g2d.getFontMetrics(font);
 	        // Determine the X coordinate for the text
 	        int x = (Main.WIDTH - metrics.stringWidth(winnerText)) / 2;
 	        // Determine the Y coordinate for the text (note we add the ascent, as in java 2d 0 is top of the screen)
@@ -140,6 +155,7 @@ public class Game extends JPanel implements ActionListener {
 		//Check if updates need to be made
 		if(!gameOver) {
 			
+			titleMenu.update();//If needed
 			player1.update();//Update player's position
 			pongBall.update();
 			computerPlayer.update();

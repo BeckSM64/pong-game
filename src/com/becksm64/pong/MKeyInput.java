@@ -3,19 +3,19 @@ package com.becksm64.pong;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class KeyInput extends KeyAdapter{
+public class MKeyInput extends KeyAdapter{
 	
-	Paddle p;
+	Menu m;
   
-	public KeyInput(Paddle p){
-		this.p = p;
+	public MKeyInput(Menu m){
+		this.m = m;
 	}
 
 	public void keyPressed(KeyEvent e){
-		p.keyPressed(e);
+		m.keyPressed(e);
 	}
 	  
 	public void keyReleased(KeyEvent e){
-		p.keyReleased(e);
+		m.keyReleased(e);
 	}
 }
