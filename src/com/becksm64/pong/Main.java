@@ -25,10 +25,4 @@ public class Main {
 		frame.setVisible(true);
 		
 	}
-	
-	/*public static void reset() {
-		
-		//Reset all objects and return to initial state
-		game.reset();
-	}*/
 }
