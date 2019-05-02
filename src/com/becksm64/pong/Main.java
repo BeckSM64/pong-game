@@ -14,7 +14,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//Main
-		frame = new JFrame("PONG, BITCHES");
+		frame = new JFrame("Pong Game");
 		frame.pack();
 		frame.setSize(WIDTH, HEIGHT);	
 		frame.setResizable(false);
